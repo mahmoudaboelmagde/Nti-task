@@ -1,0 +1,40 @@
+{{>header}}
+<section class="container my-4">
+    <h3 class="text-center text-primary">{{pageTitle}}</h3>
+    <table class="table table-stripped">
+        <thead>
+            <th>aacName</th>
+            <th>name</th>
+            <th>Balance</th>
+            <th>Transacations</th>
+            <th>Actions</th>
+        </thead>
+        <tbody>
+         
+            {{#if hasData}}
+        {{#each data}}
+            <tr>
+                 <td>{{this.accName}}</td>
+                <td>{{this.name}}</td>
+                <td>{{this.balance}}</td>
+                <td>{{this.transaction.transactionTypes}}</td>
+                <td>{{this.transaction.value}}</td>
+
+                <td>
+                    <a href="/user/{{this.accName}}" class="btn btn-primary mx-3">Show</a>
+                    <a href="/user/del/{{this.accName}}" class="btn btn-danger mx-3">Delete</a>
+                    <a href="/users/edite/{{this.accName}}" class="btn btn-success mx-3">Edit</a>
+                </td>
+            </tr>
+           {{/each}}
+        {{else}}
+            <tr class="alert alert-danger">
+                    <td colspan="4">
+                        No Users Yet
+                    </td>
+                </tr>
+           {{/if}}
+        </tbody>
+    </table>
+</section>
+{{>footer}}

@@ -1,0 +1,30 @@
+{{>header}}
+
+<div class="container">
+    <form method="post" >
+
+        <input type="text" class="form-control" placeholder="accName" disabled>
+        <input type="text" class="form-control" placeholder="name" name="name">
+        <input type="text" class="form-control" placeholder="Balance" name="balance">
+
+
+        
+     <label for="transaction" class="form-label">transaction</label>
+              <select name="transaction" class="form-control" id="transaction">
+                <option selected disabled>please choose your type</option>
+                {{#each transaction}}
+                <option value="{{this.transactionTypes}}">{{this.transactionTypes}}</option>
+                {{/each}}
+              </select>
+              <select name="transaction" class="form-control" id="transaction">
+                <option selected disabled>please choose your type</option>
+                {{#each transaction}}
+                <option value="{{this.value}}">{{this.value}}</option>
+                {{/each}}
+              </select>
+      <button type="submit" class="btn btn-primary">send</button>
+    </form>
+</div>
+
+
+{{>footer}}

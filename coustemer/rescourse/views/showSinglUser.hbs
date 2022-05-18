@@ -1,0 +1,24 @@
+{{>header}}
+
+  <section class="container my-4">
+    <h3 class="text-center text-primary">User Data</h3>
+    {{#unless data}}
+    <div class="alert alert-danger">
+        No User Data Found
+    </div>
+    {{else}}
+    <table class="table table-stripped">
+        <thead class="alert alert-primary p-3">
+            <tr>
+                <th>accName: {{data.accName}}</th>
+                <th>name: {{data.name}}</th>
+            </tr>
+            <tr>
+                <td>balance: {{data.balance}}</td>
+                <td>Transacations: {{data.transactionTypes}}</td>
+            </tr>
+        </thead>
+    </table>
+    {{/unless}}
+</section>
+{{>footer}}

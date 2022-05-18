@@ -1,0 +1,24 @@
+{{>header}}
+
+<div class="container">
+    <form method="post" >
+
+        <input type="text" class="form-control" placeholder="accName" disabled value="{{user.accName}}">
+        <input type="text" class="form-control" placeholder="name" name="name" value="{{user.name}}">
+        <input type="text" class="form-control" placeholder="Balance" name="balance" value="{{user.balance}}">
+
+
+     <label for="inputState" class="form-label">type</label>
+    <select id="inputState" class="form-select" name="type">
+      <option selected>Choose...</option>
+        {{#each transactionTypes}}
+
+      <option value="{{this}}">{{this}}</option>
+      {{/each}}
+    </select>
+      <button type="submit" class="btn btn-primary">send</button>
+    </form>
+</div>
+
+
+{{>footer}}
