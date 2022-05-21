@@ -1,0 +1,10 @@
+ 
+ {{>header}}
+ <h4>Transaction</h4>
+ <select class="form-select" aria-label="Default select example" name="tran">
+  <option selected>Select tran</option>
+  {{#each Tran }}
+  <option >{{this.Transaction}}</option>
+  {{/each}}
+</select>
+{{>footer}}
